@@ -13,8 +13,8 @@ import java.util.StringTokenizer;
  * 시그널을 보내는 방향과 가장 긴 시간 출력, 무한히 전파된다면 Voyager 출력 
  */
 public class Main_BJ3987 {						//보이저 1호
-	static int[] dx = {0, 1, 0, -1};
-	static int[] dy = {-1, 0, 1, 0};		//URDL순으로 벡터 선언
+	static int[] dx = {-1, 0, 1, 0};
+	static int[] dy = {0, 1, 0, -1};		//URDL순으로 벡터 선언
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -34,84 +34,93 @@ public class Main_BJ3987 {						//보이저 1호
 		st = new StringTokenizer(br.readLine());
 		int pr = Integer.parseInt(st.nextToken())-1;
 		int pc = Integer.parseInt(st.nextToken())-1;		//pr, pc가 1, 1부터 시작해서 0,0부터 시작하도록 조정
-		char dir = 'U', prevDir;							//시작할 때 방향, 진행방향
-		int max = 0;
-		for(int d = 0; d < 4; d++) {
-			if(d == 0) {
-				prevDir = 'U';
+		
+		int[] answer = new int[4]; // U R D L 순으로 정답을 담을거
+		int dir = 0;				//현재 진행 방향
+		
+		for(int d = 0; d < 4; d++) { //0-U, 1-R, 2-D, 3-L
+			int count = 0;
+			int x = pr;
+			int y = pc;	
+			
+			//현재 출발 방향 저장
+			if(d == 0){
+				dir = 0;
 			}else if(d == 1){
-				prevDir = 'R';
+				dir = 1;
 			}else if(d == 2){
-				prevDir = 'D';
-			}else {
-				prevDir = 'L';
+				dir = 2;
+			}else if(d == 3){
+				dir = 3;
 			}
 			
-			int count = 1;
-			int x = dx[d] + pr;
-			int y = dy[d] + pc;	
-			while(x >= 0 && x < n && y >= 0 && y < m) {
+			while(true) {
+				count++;
 				
 				//시그널이 존재하는 시간이 n*m(항성계를 전부 탐색하고도 넘을 시간)을 넘는다면 무한히 전파된다고 판단
-				if(count > n*m) {
-					System.out.println("Voyager");
-					return;
+				if(count > 25000000) {		//500*500으로도 택없길래 더 크게 설정
+					answer[d] = 1000000000;
+					break;
+				}
+				
+				x = x + dx[dir];
+				y = y + dy[dir];
+				
+				if(x < 0 || x >= n || y < 0 || y >= m || arr[x][y] == 'C') {
+					answer[d] = count;
+					break;								//블랙홀이나 맵 밖은 즉시 종료
 				}
 				
 				//진행방향을 바꿀 요소가 등장하면 진행방향 변경
 				if(arr[x][y] == '/') {
-					if(prevDir == 'U') {
-						prevDir = 'R';
-					}else if(prevDir == 'R') {
-						prevDir = 'U';
-					}else if(prevDir == 'D') {
-						prevDir = 'L';
-					}else if(prevDir == 'L') {
-						prevDir = 'D';
+					if(dir == 0) {
+						dir = 1;
+					}else if(dir == 1) {
+						dir = 0;
+					}else if(dir == 2) {
+						dir = 3;
+					}else if(dir == 3) {
+						dir = 2;
 					}
 				}else if(arr[x][y] == '\\') {
-					if(prevDir == 'U') {
-						prevDir = 'L';
-					}else if(prevDir == 'R') {
-						prevDir = 'D';
-					}else if(prevDir == 'D') {
-						prevDir = 'R';
-					}else if(prevDir == 'L') {
-						prevDir = 'U';
+					if(dir == 0) {
+						dir = 3;
+					}else if(dir == 1) {
+						dir = 2;
+					}else if(dir == 2) {
+						dir = 1;
+					}else if(dir == 3) {
+						dir = 0;
 					}
-				}else if(arr[x][y] == 'C') {
-					break;								//블랙홀은 즉시 종료
 				}
 				
-				//진행 방향에 맞게 직진
-				if(prevDir == 'U') {
-					y--;
-				}else if(prevDir == 'R') {
-					x++;
-				}else if(prevDir == 'D') {
-					y++;
-				}else if(prevDir == 'L') {
-					x--;
-				}
-				count++;
-			}
-			if(max < count) {
-				System.out.println(count +"  " + d);		//디버깅용 아니 근데 왜 이렇게 나오지
-				max = count;
-				if(d == 0) {
-					dir = 'U';
-				}else if(d == 1) {
-					dir = 'R';
-				}else if(d == 2) {
-					dir = 'D';
-				}else if(d == 3){
-					dir = 'L';
-				}
 			}
 		}
 		
-		System.out.println(dir);
-		System.out.println(max);
+		int max = 0;
+		int idx = 0;
+		for(int d = 0; d < 4; d++) {
+			if(answer[d] > max) {
+				max = answer[d];
+				idx = d;
+			}
+		}
+		
+		if(idx == 0) {
+			System.out.println('U');
+		}else if(idx == 1) {
+			System.out.println('R');
+		}else if(idx == 2) {
+			System.out.println('D');
+		}else if(idx == 3) {
+			System.out.println('L');
+		}
+		
+		if(max == 1000000000) {
+			System.out.println("Voyager");
+		}else{
+			System.out.println(max);
+		}
 	}
 
 }
