@@ -3,6 +3,7 @@ package s0512;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /*
@@ -27,9 +28,19 @@ public class Main_BJ4307 {                      //개미
                 arr[j] = Integer.parseInt(br.readLine());
             }
 
-            
+            int[] min = new int[n];    //가장 빠른 시간
+            int[] max = new int[n];    // 가장 느린 시간
+            for(int j = 0; j < n; j++){
+                int num1 = arr[j] - 0;
+                int num2 = l - arr[j];
+                min[j] = Math.min(num1, num2);
+                max[j] = Math.max(num1, num2);
+            }
 
-            System.out.println();
+            Arrays.sort(min);
+            Arrays.sort(max);
+
+            System.out.println(min[n-1]+ " " +max[n-1]);
         }
     }
 }
