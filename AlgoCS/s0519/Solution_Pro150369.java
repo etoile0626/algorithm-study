@@ -9,5 +9,10 @@ package s0519;
     *각 집의 배달 및 수거는 원하는 개수만큼 가능함
  */
 public class Solution_Pro150369 {                           //택배 배달과 수거하기
-
+    class Solution {
+        public long solution(int cap, int n, int[] deliveries, int[] pickups) {
+            long answer = -1;
+            return answer;
+        }
+    }
 }
