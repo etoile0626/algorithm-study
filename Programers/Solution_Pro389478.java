@@ -1,6 +1,6 @@
 package alone;
 
-public class Solution_389478 {                                 //택배 상자 꺼내기
+public class Solution_Pro389478 {                                 //택배 상자 꺼내기
     class Solution {
         public int solution(int n, int w, int num) {
             int answer = 0;
