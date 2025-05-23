@@ -17,6 +17,8 @@ public class Main_BJ3078 {                          //좋은 친구
         int n = Integer.parseInt(st.nextToken());
         int k = Integer.parseInt(st.nextToken());
 
+        int[] arr = new int[k];
+
         
     }
 }
