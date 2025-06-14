@@ -19,7 +19,7 @@ size 1:    size 2:    size 3:
     *다이아몬드가 없으면 0 출력
  */
 public class Main_BJ1028 {                      //다이아몬드 광산
-    //다시 풀기
+    //다시 풀기 (이건 답지임)
     static int n, m, map[][];
     static int dp[][][];
 
