@@ -16,8 +16,25 @@ import java.util.StringTokenizer;
 public class Main_BJ1012 {                          //유기농 배추
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        
+        int t = Integer.parseInt(br.readLine());
+        for(int i = 0; i < t; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+
+            int m = Integer.parseInt(st.nextToken());
+            int n = Integer.parseInt(st.nextToken());
+            int k = Integer.parseInt(st.nextToken());
+
+            int [][] arr = new int [n][m];
+            for(int j = 0; j < k; j++){
+                st = new StringTokenizer(br.readLine());
+
+                int x = Integer.parseInt(st.nextToken());
+                int y = Integer.parseInt((st.nextToken());
+                arr[y][x] = 1;
+            }
+
+            
+        }
     }
 }
