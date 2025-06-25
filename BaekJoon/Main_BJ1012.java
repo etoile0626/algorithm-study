@@ -14,27 +14,60 @@ import java.util.StringTokenizer;
     *(x, y) = 배추의 위치(가로, 세로)
  */
 public class Main_BJ1012 {                          //유기농 배추
+    static int n, m, k;
+    static int[] dx = {1, -1, 0, 0};
+    static int[] dy = {0, 0, 1, -1};
+    static int [][] arr;
+    static boolean [][] visited;
+
+    static void dfs(int i, int j){
+        visited[i][j] = true;
+
+        for(int d = 0; d < 4; d++){
+            int di = i + dx[d];
+            int dj = j + dy[d];
+
+            if(0 <= di&&di < n && 0 <= dj && dj < m) {
+                if (arr[di][dj] == 1 && !visited[di][dj]) {
+                    dfs(di, dj);
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int t = Integer.parseInt(br.readLine());
-        for(int i = 0; i < t; i++) {
+        for(int T = 0; T < t; T++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
 
-            int m = Integer.parseInt(st.nextToken());
-            int n = Integer.parseInt(st.nextToken());
-            int k = Integer.parseInt(st.nextToken());
+            m = Integer.parseInt(st.nextToken());
+            n = Integer.parseInt(st.nextToken());
+            k = Integer.parseInt(st.nextToken());
 
-            int [][] arr = new int [n][m];
-            for(int j = 0; j < k; j++){
+            int num = 0;
+
+            arr = new int [n][m];
+            visited = new boolean[n][m];
+            for(int i = 0; i < k; i++){
                 st = new StringTokenizer(br.readLine());
 
                 int x = Integer.parseInt(st.nextToken());
-                int y = Integer.parseInt((st.nextToken());
+                int y = Integer.parseInt(st.nextToken());
                 arr[y][x] = 1;
             }
 
-            
+            for(int i = 0; i < n; i++) {
+                for(int j = 0; j < m; j++) {
+                    if(arr[i][j] == 1 && !visited[i][j]) {
+                        dfs(i, j);
+                        num++;
+                    }
+                }
+            }
+
+            System.out.println(num);
         }
     }
 }
