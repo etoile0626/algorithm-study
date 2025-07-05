@@ -17,7 +17,17 @@ public class Main_BJ1004 {                          //어린 왕자
             end[0] = Integer.parseInt(st.nextToken());//도착 x
             end[1] = Integer.parseInt(st.nextToken());//도착 y
             int n = Integer.parseInt(br.readLine());
-            
+            int cnt=0;//최소의 행성계 진입,이탈 횟수
+            for(int j=0; j<n; j++) {
+                boolean startPoint=false;
+                boolean endPoint=false;
+                st=new StringTokenizer(br.readLine()," ");
+                circle[0]=Integer.parseInt(st.nextToken());//원 중심 x
+                circle[1]=Integer.parseInt(st.nextToken());//원 중심 y
+                circle[2]=Integer.parseInt(st.nextToken());//원의 반지름
+                //(x-a)^2 + (y-b)^2 <= r^2
+                
+            }
         }
     }
 }
