@@ -26,8 +26,22 @@ public class Main_BJ1004 {                          //어린 왕자
                 circle[1]=Integer.parseInt(st.nextToken());//원 중심 y
                 circle[2]=Integer.parseInt(st.nextToken());//원의 반지름
                 //(x-a)^2 + (y-b)^2 <= r^2
-                
+                //출발점, 도착점이 행성계(원) 안에 있는지를 판단함
+                if(Math.pow(start[0]-circle[0], 2)+Math.pow(start[1]-circle[1], 2)<=Math.pow(circle[2], 2)) {
+                    startPoint=true;
+                    cnt++;
+                }
+                if(Math.pow(end[0]-circle[0], 2)+Math.pow(end[1]-circle[1], 2)<=Math.pow(circle[2], 2)) {
+                    endPoint=true;
+                    cnt++;
+                }
+                //한 원안에 출발점,도착점이 동시에 속하면 cnt증가를 취소함
+                if(startPoint==true && endPoint==true)
+                    cnt-=2;
             }
+            sb.append(cnt+"\n");
         }
+        System.out.print(sb);
+        br.close();
     }
 }
