@@ -1,4 +1,4 @@
-package s0310;
+package AlgoCS.s0310;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -104,3 +104,4 @@ public class Main_BJ14502 {							//연구소
 		System.out.println(max);
 	}
 }
+
