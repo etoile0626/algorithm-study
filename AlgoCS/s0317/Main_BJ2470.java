@@ -1,4 +1,4 @@
-package s0317;
+package AlgoCS.s0317;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -58,3 +58,4 @@ public class Main_BJ2470 {										//두 용액
 	}
 
 }
+
