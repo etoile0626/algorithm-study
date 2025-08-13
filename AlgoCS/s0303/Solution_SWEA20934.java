@@ -1,4 +1,4 @@
-package s0303;
+package AlgoCS.s0303;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -44,3 +44,4 @@ public class Solution_SWEA20934 {							//방울마술
 		br.close();
 	}
 }
+
