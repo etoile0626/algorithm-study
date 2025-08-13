@@ -1,4 +1,4 @@
-package s0303;
+package AlgoCS.s0303;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -38,3 +38,4 @@ public class Main_BJ1929 {									//소수 구하기
 		sc.close();
 	}
 }
+
