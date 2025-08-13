@@ -1,4 +1,4 @@
-package s0317;
+package AlgoCS.s0317;
 
 import java.util.Scanner;
 
@@ -50,3 +50,4 @@ public class Main_BJ1456 {								//거의 소수
 	}
 
 }
+
