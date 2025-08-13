@@ -1,4 +1,4 @@
-package s0303;
+package AlgoCS.s0303;
 
 /*
  * 라이언이 n개의 화살을 쏴 가장 큰 점수차이로 이기기 위해 어느 과녁에 맞춰야하는지 출력할것.
@@ -75,3 +75,4 @@ public class Solution_Pro92342 {					//양궁대회
 	    }
 	}
 }
+
