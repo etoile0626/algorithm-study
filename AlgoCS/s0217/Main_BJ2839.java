@@ -1,4 +1,4 @@
-package s0217;
+package AlgoCS.s0217;
 
 import java.util.Scanner;
 
@@ -35,3 +35,4 @@ public class Main_BJ2839 {							//설탕 배달
 	}
 
 }
+
