@@ -1,4 +1,4 @@
-package s0224;
+package AlgoCS.s0224;
 
 import java.util.Scanner;
 
@@ -40,3 +40,4 @@ public class Main_BJ1003 {								//피보나치 수열
 	}
 
 }
+
