@@ -1,4 +1,4 @@
-package s0224;
+package AlgoCS.s0224;
 
 import java.util.*;
 //https://school.programmers.co.kr/learn/courses/30/lessons/1844
@@ -36,3 +36,4 @@ class Solution_Pro1844 {
 	        return answer;
 	    }
 }
+
