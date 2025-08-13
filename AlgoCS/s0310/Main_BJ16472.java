@@ -1,4 +1,4 @@
-package s0310;
+package AlgoCS.s0310;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -40,3 +40,4 @@ public class Main_BJ16472 {									//고냥이
 	}
 
 }
+
