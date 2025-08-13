@@ -1,4 +1,4 @@
-package s0217;
+package AlgoCS.s0217;
 //https://school.programmers.co.kr/learn/courses/30/lessons/42842
 
 public class Solution_Pro42842 {								//카펫
@@ -17,3 +17,4 @@ public class Solution_Pro42842 {								//카펫
         return answer;
     }
 }
+
