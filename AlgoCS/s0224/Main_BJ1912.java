@@ -1,4 +1,4 @@
-package s0224;
+package AlgoCS.s0224;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -39,3 +39,4 @@ public class Main_BJ1912 {									//연속합
 		System.out.println(answer);
 	}
 }
+
