@@ -1,4 +1,4 @@
-package s0224;
+package AlgoCS.s0224;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -73,3 +73,4 @@ public class Main_BJ2178 {											//미로탐색
 		br.close();
 	}
 }
+
