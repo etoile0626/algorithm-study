@@ -1,4 +1,4 @@
-package s0310;
+package AlgoCS.s0310;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -79,3 +79,4 @@ public class Main_BJ2665 {								//미로만들기
 	}
 
 }
+
