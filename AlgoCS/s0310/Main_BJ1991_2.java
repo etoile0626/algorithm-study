@@ -1,4 +1,4 @@
-package s0310;
+package AlgoCS.s0310;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -89,3 +89,4 @@ public class Main_BJ1991_2 {						//트리 순회 (다시 풀기)
 	}
 
 }
+
