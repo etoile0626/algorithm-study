@@ -1,4 +1,4 @@
-package s0217;
+package AlgoCS.s0217;
 
 import java.util.Scanner;
 
@@ -43,3 +43,4 @@ public class Main_BJ1065 {									//한수
 		System.out.println(count);
 	}
 }
+
