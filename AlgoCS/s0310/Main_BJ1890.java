@@ -1,4 +1,4 @@
-package s0310;
+package AlgoCS.s0310;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -46,3 +46,4 @@ public class Main_BJ1890 {										//점프
 		System.out.println(dp[n-1][n-1]);
 	}
 }
+
