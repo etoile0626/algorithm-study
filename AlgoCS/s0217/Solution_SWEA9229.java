@@ -1,4 +1,4 @@
-package s0217;
+package AlgoCS.s0217;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -59,3 +59,4 @@ public class Solution_SWEA9229 {					//한빈이와 Spot Mart
 	}
 
 }
+
