@@ -1,4 +1,4 @@
-package s0303;
+package AlgoCS.s0303;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -42,3 +42,4 @@ public class Main_BJ11659 {									//구간 합 구하기 4
 	}
 
 }
+
